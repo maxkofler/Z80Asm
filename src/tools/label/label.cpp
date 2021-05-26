@@ -10,6 +10,14 @@ Label::Label(std::string name){
     this->setName(name);
 }
 
+Label::Label(std::string name, uint16_t addr){
+    FUN();
+
+    this->setName(name);
+    this->setAddress(addr);
+}
+
+
 Label::~Label(){
     FUN();
 }

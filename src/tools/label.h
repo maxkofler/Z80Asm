@@ -14,6 +14,7 @@ class Label{
 public:
     Label();
     Label(std::string name);
+    Label(std::string name, uint16_t addr);
     ~Label();
 
     /**

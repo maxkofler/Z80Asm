@@ -3,11 +3,11 @@
 Asm::Asm(){
     FUN();
 
-    this->_parser = new FileParser();
+    this->_sourceFile = new FileParser();
 }
 
 Asm::~Asm(){
     FUN();
 
-    delete this->_parser;
+    delete this->_sourceFile;
 }

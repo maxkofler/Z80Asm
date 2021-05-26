@@ -3,5 +3,5 @@
 bool Asm::loadSource(std::string file){
     FUN();
 
-    return this->_parser->parseSourceFile(file) > 0;
+    return this->_sourceFile->parseSourceFile(file) > 0;
 }

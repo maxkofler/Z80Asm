@@ -11,7 +11,7 @@ int main(int argc, char** argv){
     if (!asmx.loadSource("../test.asm"))
         return -1;
 
-    asmx.fetchLabels();
+    asmx.assemble(0x1000);
 
     return 0;
 }
