@@ -27,6 +27,12 @@ public:
      **/
     void                        push16bHexString(std::string num);
 
+    /**
+     *  Pushes a 8-bit hexadecimal value to the operand list
+     *  @arg    num             A hexadecimal string containing the number
+     **/
+    void                        push8bHexString(std::string num);
+
 private:
     std::string                 _unifiedString;
     uint8_t                     _opcode;

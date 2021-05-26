@@ -39,10 +39,12 @@ bool Instruction::p_parseOP(std::string curBlock){
                 //  8-bit immediate
                 //  [*]     [F6h]
                 operand = "*";
+                this->push8bHexString(curBlock);
             }else{
                 //  3 long label
                 //  [FUN]
                 operand = "**";
+                this->push16bHexString(curBlock);
             }
             break;
 
@@ -60,6 +62,7 @@ bool Instruction::p_parseOP(std::string curBlock){
                 //  4 long label
                 //  [LOOP]
                 operand = "**";
+                this->push16bHexString(curBlock);
             }
             break;
         
@@ -69,6 +72,7 @@ bool Instruction::p_parseOP(std::string curBlock){
                     //  8-bit direct address
                     //  [(*)]   [(F6h)]
                     operand = "(*)";
+                    this->push8bHexString(curBlock);
                 }else{
                     LOGE("Could not identify operator type of \"" + curBlock + "\"");
                     return false;
@@ -77,10 +81,12 @@ bool Instruction::p_parseOP(std::string curBlock){
                 //  16-bit immediate
                 //  [**]    [F6A1h]
                 operand = "**";
+                this->push16bHexString(curBlock);
             }else{
                 //  5 long label
                 //  [LOOP1]
                 operand = "**";
+                this->push16bHexString(curBlock);
             }
             break;
 
@@ -88,6 +94,7 @@ bool Instruction::p_parseOP(std::string curBlock){
             //  6 long label
             //  [LOOPER]
             operand = "**";
+            this->push16bHexString(curBlock);
             break;
 
         case 7:
@@ -96,6 +103,7 @@ bool Instruction::p_parseOP(std::string curBlock){
                     //  16-bit direct address
                     //  [(**)]  [(F6A1h)]
                     operand = "(**)";
+                    this->push16bHexString(curBlock);
                 }else{
                     LOGE("Could not identify operator type of \"" + curBlock + "\"");
                     return false;
@@ -104,12 +112,15 @@ bool Instruction::p_parseOP(std::string curBlock){
                 //  7 long label
                 //  [LOOPER1]
                 operand = "**";
+                this->push16bHexString(curBlock);
             }
             break;
 
         default:
             //  label
             operand = "**";
+            this->push16bHexString(curBlock);
+            break;
     }
 
     this->_unifiedString += "," + operand;
