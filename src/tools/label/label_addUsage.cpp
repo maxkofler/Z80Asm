@@ -1,4 +1,4 @@
-#include "label.h"
+#include "../label.h"
 
 void Label::addUsage(uint16_t addr){
     FUN();

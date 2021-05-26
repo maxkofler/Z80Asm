@@ -1,4 +1,4 @@
-#include "parsertools.h"
+#include "../parsertools.h"
 
 Block ParserTools::blockFromCodeLine(std::string line){
     FUN();

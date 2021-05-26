@@ -5,8 +5,8 @@ class ParserTools;
 
 #include <string>
 
-#include "../../log/log.h"
-#include "../block/block.h"
+#include "../log/log.h"
+#include "./block.h"
 
 class ParserTools{
 

@@ -1,4 +1,4 @@
-#include "label.h"
+#include "../label.h"
 
 void Label::setName(std::string name){
     FUN();

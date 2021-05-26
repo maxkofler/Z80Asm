@@ -1,4 +1,4 @@
-#include "fileparser.h"
+#include "../fileparser.h"
 
 size_t FileParser::parseSourceFile(std::string path){
     FUN();
@@ -17,9 +17,9 @@ size_t FileParser::parseSourceFile(std::string path){
     while (!this->_curFile.eof()){
         getline(this->_curFile, buf);
         curBlock = ParserTools::blockFromCodeLine(buf);
-        this->_blocks.push_back(curBlock);
-        LOGD("Fetched block: " + this->_blocks.back().toString());
+        this->_lines.push_back(curBlock);
+        LOGD("Fetched block: " + this->_lines.back().toString());
     }
 
-    return this->_blocks.size();
+    return this->_lines.size();
 }

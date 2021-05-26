@@ -6,10 +6,10 @@ class FileParser;
 #include <fstream>
 #include <string>
 
-#include "../../log/log.h"
+#include "../log/log.h"
 
-#include "../block/block.h"
-#include "../parsertools/parsertools.h"
+#include "./block.h"
+#include "./parsertools.h"
 
 class FileParser{
 public:
@@ -26,7 +26,7 @@ private:
     std::string                 _pathCurFile;   
     std::ifstream               _curFile;
 
-    std::vector<Block>          _blocks;
+    std::vector<Block>          _lines;
 };
 
 #endif

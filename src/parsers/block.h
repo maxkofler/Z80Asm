@@ -6,7 +6,7 @@ class Block;
 #include <vector>
 #include <string>
 
-#include "../../log/log.h"
+#include "../log/log.h"
 
 class Block{
 

@@ -1,4 +1,4 @@
-#include "fileparser.h"
+#include "../fileparser.h"
 
 FileParser::FileParser(){
     FUN();

@@ -1,4 +1,4 @@
-#include "block.h"
+#include "../block.h"
 
 void Block::append(std::string s){
     FUN();
