@@ -9,6 +9,7 @@ class FileParser;
 #include "../../log/log.h"
 
 #include "../block/block.h"
+#include "../parsertools/parsertools.h"
 
 class FileParser{
 public:
@@ -20,12 +21,6 @@ public:
      *  @arg    path            The path to the source file
      **/
     size_t                      parseFile(std::string path);
-
-    /**
-     *  Parses a line to a block
-     *  @arg    line            The line to parse to a block
-     **/
-    Block                       blockFromLine(std::string line);
 
 private:
     std::string                 _pathCurFile;   

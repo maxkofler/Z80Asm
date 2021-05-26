@@ -13,7 +13,7 @@ size_t FileParser::parseFile(std::string path){
     std::string buf;
     while (!this->_curFile.eof()){
         getline(this->_curFile, buf);
-        this->_blocks.push_back(this->blockFromLine(buf));
+        this->_blocks.push_back(ParserTools::blockFromLine(buf));
     }
 
     return this->_blocks.size();
