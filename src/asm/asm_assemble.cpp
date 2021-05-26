@@ -17,7 +17,11 @@ bool Asm::assemble(uint16_t startAddr){
             if (this->p_checkLabelDefinition(curBlock, curAddr))
                 continue;
 
-            
+            if (this->p_checkInstruction(line, blockPos, curAddr)){
+                //Go to the next block
+                blockPos = line.length();          
+                continue;
+            }
         }
     }
 

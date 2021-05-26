@@ -5,6 +5,7 @@ class Asm;
 
 #include <string>
 #include <vector>
+#include <utility>
 
 #include "../log/log.h"
 #include "../parsers/fileparser.h"
@@ -61,6 +62,22 @@ private:
      *                              -2  undefined reference to a label (label not found)
      **/
     int                             p_checkInstruction(Block& curLine, size_t curPos, uint16_t& curAddr);
+
+    /**
+     *  assemble()  Converts the current string to a uniform string for lookup for the opcode
+     *  @arg    curLine             The line to process
+     *  @arg    curPos              The current position in the line to assemble from
+     *  @return bool                success
+     *          string              The string to look up
+     **/
+    std::pair<bool, std::string>    p_makeUniformString(Block& curLine, size_t curPos);
+
+    /**
+     *  assemble()  Convert the provided block to a unified operand for lookup
+     *  @arg    block               The block to parse
+     *  @return                     The uniform string to add to the lookup string
+     **/
+    std::string                     p_makeUniformOperand(std::string block);
 };
 
 #endif

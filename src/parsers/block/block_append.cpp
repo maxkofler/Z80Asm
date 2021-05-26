@@ -4,7 +4,14 @@ void Block::append(std::string s){
     FUN();
     
     if (!s.empty()){
-        this->_blocks.push_back(s);
+
+        std::string appString = "";
+
+        for (size_t pos = 0; pos < s.size(); pos++){
+            appString += std::toupper(s[pos]);
+        }
+
+        this->_blocks.push_back(appString);
     }
 }
 

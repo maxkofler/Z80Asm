@@ -1,9 +1,11 @@
-loop:
-    ld a, 0xF2
-    ld a,0xF3
-    ld  a 0xF4
-    call fun
-    rjmp fun
+LOOP:
+    ld a, f6h
+    ld bc, F6A1h
 
-fun:
-    ret
+
+FUN:
+LOOP1:
+LOOPER:
+LOOPER1:
+GAMINGLABELGAMING:
+    NOP
