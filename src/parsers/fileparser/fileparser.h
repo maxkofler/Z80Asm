@@ -20,7 +20,7 @@ public:
      *  Parses a source file
      *  @arg    path            The path to the source file
      **/
-    size_t                      parseFile(std::string path);
+    size_t                      parseSourceFile(std::string path);
 
 private:
     std::string                 _pathCurFile;   

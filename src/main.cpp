@@ -7,5 +7,5 @@ int main(int argc, char** argv){
     hlog = new Log(Log::MEM, false);
 
     FileParser p;
-    p.parseFile("../test.asm");
+    p.parseSourceFile("../test.asm");
 }
