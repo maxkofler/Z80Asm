@@ -7,7 +7,7 @@ int Asm::p_checkInstruction(Block& curLine, size_t curPos, uint16_t& curAddr){
 
     Instruction is;
 
-    is.parse(curLine, curPos, curAddr);
+    is.parse(curLine, curPos, curAddr, this->_labels);
 
     return 1;
 }

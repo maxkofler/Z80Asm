@@ -1,6 +1,6 @@
 #include "../instruction.h"
 
-bool Instruction::parse(Block& block, size_t pos, uint16_t& curAddr){
+bool Instruction::parse(Block& block, size_t pos, uint16_t& curAddr, LabelManager* labels){
     FUN();
 
     //Clear the internal string
@@ -15,7 +15,7 @@ bool Instruction::parse(Block& block, size_t pos, uint16_t& curAddr){
     //Check for a 1. operand
     if (pos < block.length()){
         std::string curBlock = block.at(pos);
-        if (!p_parseOP(curBlock))
+        if (!p_parseOP(curBlock, curAddr, labels))
             return false;
     }
 
@@ -24,7 +24,7 @@ bool Instruction::parse(Block& block, size_t pos, uint16_t& curAddr){
     //Check for a 1. operand
     if (pos < block.length()){
         std::string curBlock = block.at(pos);
-        if (!p_parseOP(curBlock))
+        if (!p_parseOP(curBlock, curAddr, labels))
             return false;
     }
 

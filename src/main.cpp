@@ -4,7 +4,7 @@
 Log* hlog;
 
 int main(int argc, char** argv){
-    hlog = new Log(Log::MEM, false);
+    hlog = new Log(Log::F, false);
 
     Asm asmx;
 

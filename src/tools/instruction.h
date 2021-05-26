@@ -9,6 +9,7 @@ class Instruction;
 #include "../log/log.h"
 
 #include "../parsers/block.h"
+#include "labelmanager.h"
 
 class Instruction{
 
@@ -19,7 +20,7 @@ public:
     /**
      *  Parses all the information needed to look up this instruction
      **/
-    bool                        parse(Block& curBlock, size_t pos, uint16_t& curAddr);
+    bool                        parse(Block& curBlock, size_t pos, uint16_t& curAddr, LabelManager* labels);
 
     /**
      *  Pushes a 16-bit hexadecimal value to the operand list
@@ -41,7 +42,7 @@ private:
     bool                        _parsed;
 
 
-    bool                        p_parseOP(std::string curBlock);
+    bool                        p_parseOP(std::string curBlock, uint16_t& curAddr, LabelManager* labels);
 };
 
 #endif

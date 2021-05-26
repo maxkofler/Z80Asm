@@ -36,6 +36,7 @@ public:
     void                        addUsage(uint16_t addr);
 
     std::string                 getName(){return this->_name;}
+    uint16_t                    getAddress(){return this->_address;}
 
 private:
     std::string                 _name;

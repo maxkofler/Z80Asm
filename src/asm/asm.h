@@ -9,6 +9,7 @@ class Asm;
 
 #include "../log/log.h"
 #include "../parsers/fileparser.h"
+#include "../tools/labelmanager.h"
 #include "../tools/label.h"
 #include "../parsers/block.h"
 
@@ -31,16 +32,9 @@ public:
      **/
     bool                            assemble(uint16_t startAddr);
 
-    /**
-     *  Get a pointer to the specified label
-     *  @arg    name                The name to search for
-     **/
-    Label*                          getLabel(std::string name);
-
 private:
     FileParser*                     _sourceFile;
-
-    std::vector<Label>              _labels;
+    LabelManager*                   _labels;
 
     /**
      *  assemble()  Check if the current block is a label definition and insert the current address

@@ -2,7 +2,7 @@
 
 #include <ctype.h>
 
-bool Instruction::p_parseOP(std::string curBlock){
+bool Instruction::p_parseOP(std::string curBlock, uint16_t& curAddr, LabelManager* labels){
     FUN();
 
     std::string operand = "";
@@ -44,7 +44,9 @@ bool Instruction::p_parseOP(std::string curBlock){
                 //  3 long label
                 //  [FUN]
                 operand = "**";
-                this->push16bHexString(curBlock);
+                this->push16bHexString("0000");
+                labels->labelUsage(curBlock, curAddr);
+                curAddr+=2;
             }
             break;
 
@@ -62,7 +64,9 @@ bool Instruction::p_parseOP(std::string curBlock){
                 //  4 long label
                 //  [LOOP]
                 operand = "**";
-                this->push16bHexString(curBlock);
+                this->push16bHexString("0000");
+                labels->labelUsage(curBlock, curAddr);
+                curAddr+=2;
             }
             break;
         
@@ -86,7 +90,9 @@ bool Instruction::p_parseOP(std::string curBlock){
                 //  5 long label
                 //  [LOOP1]
                 operand = "**";
-                this->push16bHexString(curBlock);
+                this->push16bHexString("0000");
+                labels->labelUsage(curBlock, curAddr);
+                curAddr+=2;
             }
             break;
 
@@ -94,7 +100,9 @@ bool Instruction::p_parseOP(std::string curBlock){
             //  6 long label
             //  [LOOPER]
             operand = "**";
-            this->push16bHexString(curBlock);
+            this->push16bHexString("0000");
+            labels->labelUsage(curBlock, curAddr);
+            curAddr+=2;
             break;
 
         case 7:
@@ -119,7 +127,9 @@ bool Instruction::p_parseOP(std::string curBlock){
         default:
             //  label
             operand = "**";
-            this->push16bHexString(curBlock);
+            this->push16bHexString("0000");
+            labels->labelUsage(curBlock, curAddr);
+            curAddr+=2;
             break;
     }
 
