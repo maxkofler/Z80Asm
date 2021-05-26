@@ -7,4 +7,11 @@ int main(int argc, char** argv){
     hlog = new Log(Log::MEM, false);
 
     Asm asmx;
+
+    if (!asmx.loadSource("../test.asm"))
+        return -1;
+
+    asmx.fetchLabels();
+
+    return 0;
 }

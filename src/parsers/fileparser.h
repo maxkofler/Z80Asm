@@ -8,6 +8,7 @@ class FileParser;
 
 #include "../log/log.h"
 
+#include "../asm/asm.h"
 #include "./block.h"
 #include "./parsertools.h"
 
@@ -22,6 +23,8 @@ public:
      **/
     size_t                      parseSourceFile(std::string path);
 
+
+    friend class                Asm;
 private:
     std::string                 _pathCurFile;   
     std::ifstream               _curFile;
