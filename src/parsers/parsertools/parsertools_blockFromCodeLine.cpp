@@ -13,18 +13,19 @@ Block ParserTools::blockFromCodeLine(std::string line){
     buf = ParserTools::blockFromLine(line, ' ');
     if (!buf.empty())
         curBlock.append(buf);
-    else
-        LOGE("Nothing to parse in this line: \"" + line + "\"");
+        //LOGE("Nothing to parse in this line: \"" + line + "\"");
 
     //Now strip out the ',':
     //  [LD][A,][0xFE]  ->  [LD][A][0xFE]
     //  [LD][A,0xFE]    ->  [LD][A][0xFE]
+    std::string curString;
     for (size_t i = 0; i < curBlock.length(); i++){
-        buf = ParserTools::blockFromLine(line, ',');
-        if (!buf.empty())
+        curString = curBlock.at(i);
+        buf = ParserTools::blockFromLine(curString, ',');
+        if (!buf.empty()){
             retBlock.append(buf);
-        else
-            LOGE("Nothing to parse in this block: \"" + line + "\"");
+        }
+            //LOGD("Nothing to fetch in this block: \"" + curString + "\"");
     }
 
     return retBlock;

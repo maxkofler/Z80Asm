@@ -1,6 +1,8 @@
 #include "fileparser.h"
 
 size_t FileParser::parseFile(std::string path){
+    FUN();
+    
     this->_pathCurFile = path;
 
     this->_curFile.open(this->_pathCurFile);
@@ -13,7 +15,8 @@ size_t FileParser::parseFile(std::string path){
     std::string buf;
     while (!this->_curFile.eof()){
         getline(this->_curFile, buf);
-        this->_blocks.push_back(ParserTools::blockFromLine(buf));
+        this->_blocks.push_back(ParserTools::blockFromCodeLine(buf));
+        LOGD("Fetched block: " + this->_blocks.back().toString());
     }
 
     return this->_blocks.size();

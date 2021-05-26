@@ -7,3 +7,15 @@ Block::Block(){
 Block::~Block(){
     FUN();
 }
+
+std::string Block::toString(){
+    FUN();
+    
+    std::string ret = "";
+
+    for (auto i : this->_blocks){
+        ret += "[" + i + "]";
+    }
+
+    return ret;
+}

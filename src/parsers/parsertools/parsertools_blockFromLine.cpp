@@ -12,10 +12,10 @@ Block ParserTools::blockFromLine(std::string line, char delimiter){
         block = line.substr(0, pos);
         if (!block.empty())
             newBlock.append(block);
-        else
-            LOGD("Not appending empty block");
         line.erase(0, pos + 1);
     }
+    //Add the rest of the line
+    newBlock.append(line);
 
     return newBlock;
 }

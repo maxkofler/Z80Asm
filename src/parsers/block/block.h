@@ -18,8 +18,10 @@ public:
     size_t                      length(){return this->_blocks.size();}
     bool                        empty(){return this->_blocks.empty();}
 
-    void                        append(std::string s){this->_blocks.push_back(s);}
+    void                        append(std::string s);
     void                        append(Block b);
+
+    std::string                 toString();
 
 private:
     std::vector<std::string>    _blocks;
