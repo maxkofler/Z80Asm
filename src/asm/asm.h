@@ -10,6 +10,7 @@ class Asm;
 #include "../log/log.h"
 #include "../parsers/fileparser.h"
 #include "../tools/labelmanager.h"
+#include "../tools/istable.h"
 #include "../tools/label.h"
 #include "../parsers/block.h"
 
@@ -18,6 +19,12 @@ class Asm{
 public:
     Asm();
     ~Asm();
+
+    /**
+     *  Parses the lookup table from the provided file
+     *  @arg    file                The file to parse from
+     **/
+    bool                            loadLookup(std::string file);
 
     /**
      *  Loads a file into this assembler, replaces a firstly loaded file
@@ -35,6 +42,8 @@ public:
 private:
     FileParser*                     _sourceFile;
     LabelManager*                   _labels;
+    ISTable*                        _lookuptable;
+
 
     /**
      *  assemble()  Check if the current block is a label definition and insert the current address

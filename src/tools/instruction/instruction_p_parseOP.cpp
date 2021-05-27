@@ -40,13 +40,16 @@ bool Instruction::p_parseOP(std::string curBlock, uint16_t& curAddr, LabelManage
                 //  [*]     [F6h]
                 operand = "*";
                 this->push8bHexString(curBlock);
+            }else if (curBlock.back() == '\''){
+                //  16-bit shadow register
+                //  [AF']   [AF']
+                operand = curBlock;
             }else{
                 //  3 long label
                 //  [FUN]
                 operand = "**";
                 this->push16bHexString("0000");
-                labels->labelUsage(curBlock, curAddr);
-                curAddr+=2;
+                labels->labelUsage(curBlock, curAddr+1);
             }
             break;
 
@@ -65,8 +68,7 @@ bool Instruction::p_parseOP(std::string curBlock, uint16_t& curAddr, LabelManage
                 //  [LOOP]
                 operand = "**";
                 this->push16bHexString("0000");
-                labels->labelUsage(curBlock, curAddr);
-                curAddr+=2;
+                labels->labelUsage(curBlock, curAddr+1);
             }
             break;
         
@@ -91,8 +93,7 @@ bool Instruction::p_parseOP(std::string curBlock, uint16_t& curAddr, LabelManage
                 //  [LOOP1]
                 operand = "**";
                 this->push16bHexString("0000");
-                labels->labelUsage(curBlock, curAddr);
-                curAddr+=2;
+                labels->labelUsage(curBlock, curAddr+1);
             }
             break;
 
@@ -101,8 +102,7 @@ bool Instruction::p_parseOP(std::string curBlock, uint16_t& curAddr, LabelManage
             //  [LOOPER]
             operand = "**";
             this->push16bHexString("0000");
-            labels->labelUsage(curBlock, curAddr);
-            curAddr+=2;
+            labels->labelUsage(curBlock, curAddr+1);
             break;
 
         case 7:
@@ -128,12 +128,11 @@ bool Instruction::p_parseOP(std::string curBlock, uint16_t& curAddr, LabelManage
             //  label
             operand = "**";
             this->push16bHexString("0000");
-            labels->labelUsage(curBlock, curAddr);
-            curAddr+=2;
+            labels->labelUsage(curBlock, curAddr+1);
             break;
     }
 
-    this->_unifiedString += "," + operand;
+    this->_uniformString += "," + operand;
 
     return true;
 }

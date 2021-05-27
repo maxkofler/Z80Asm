@@ -4,20 +4,10 @@ bool Instruction::parse(Block& block, size_t pos, uint16_t& curAddr, LabelManage
     FUN();
 
     //Clear the internal string
-    this->_unifiedString = "";
+    this->_uniformString = "";
 
     //The first block is the opcode, directly store it
-    this->_unifiedString += block.at(pos);
-
-    curAddr++;
-    pos++;
-
-    //Check for a 1. operand
-    if (pos < block.length()){
-        std::string curBlock = block.at(pos);
-        if (!p_parseOP(curBlock, curAddr, labels))
-            return false;
-    }
+    this->_uniformString += block.at(pos);
 
     pos++;
 
@@ -28,8 +18,15 @@ bool Instruction::parse(Block& block, size_t pos, uint16_t& curAddr, LabelManage
             return false;
     }
 
-    curAddr += this->_operands.size();
-    LOGD("String to look up: \"" + this->_unifiedString + "\"");
+    pos++;
 
+    //Check for a 2. operand
+    if (pos < block.length()){
+        std::string curBlock = block.at(pos);
+        if (!p_parseOP(curBlock, curAddr, labels))
+            return false;
+    }
+
+    LOGD("String to look up: \"" + this->_uniformString + "\", begin of instruction: " + Log::toHexString(curAddr));
     return true;
 }

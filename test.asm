@@ -1,9 +1,6 @@
 LOOP:
-    ld a, f6h
-    ld bc, F6A1h
-    jr FUN
-    jr LOOP
-
-
+    ld, b, 56H
+    rj, FUN
+    rj, loop
 FUN:
     NOP

@@ -17,10 +17,18 @@ bool Asm::assemble(uint16_t startAddr){
             if (this->p_checkLabelDefinition(curBlock, curAddr))
                 continue;
 
-            if (this->p_checkInstruction(line, blockPos, curAddr)){
-                //Go to the next block
-                blockPos = line.length();          
+            int resCheckInstruction = this->p_checkInstruction(line, blockPos, curAddr);
+
+            if (resCheckInstruction == 0){
+                //No instruction found
                 continue;
+            }else if (resCheckInstruction > 0){
+                blockPos = line.length();
+                continue;
+            }else{
+                //A fatal error occured, break the assemble
+                LOGE("Fatal error in assembling");
+                return false;
             }
         }
     }

@@ -34,8 +34,11 @@ public:
      **/
     void                        push8bHexString(std::string num);
 
+    size_t                      getOpCount(){return this->_operands.size();}
+    std::string                 getUniformString(){return this->_uniformString;}
+
 private:
-    std::string                 _unifiedString;
+    std::string                 _uniformString;
     uint8_t                     _opcode;
     std::vector<uint8_t>        _operands;
 

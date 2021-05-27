@@ -11,6 +11,9 @@ int main(int argc, char** argv){
     if (!asmx.loadSource("../test.asm"))
         return -1;
 
+    if (!asmx.loadLookup("../lookup.txt"))
+        return -1;
+
     asmx.assemble(0x1000);
 
     return 0;
