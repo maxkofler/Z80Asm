@@ -26,20 +26,20 @@ bool ISTable::parseStream(std::istream& s){
         //The 1st block is the uniform string
         lookupIS newIs;
 
-        newIs.uniformString = curBlock.at(0);
+        newIs.uniformString = curBlock.at(curBlock.length()-1);
 
         //Check the 2nd block for a number and fetch it
         //The length of the opcode
-        if (!std::isdigit(curBlock.at(1).at(0))){
+        if (!std::isdigit(curBlock.at(0).at(0))){
             LOGE("2nd block is not the length of the opcode: " + curBlock.at(1));
             continue;
         }
 
-        newIs.len = std::stoi(curBlock.at(1));
+        newIs.len = std::stoi(curBlock.at(0));
 
         bool err = false;
         //Now parse all the opcodes
-        for(uint8_t i = 2; i < newIs.len+2; i++){
+        for(uint8_t i = 1; i < newIs.len+1; i++){
 
             //Check if the block is even existing
             if (i >= curBlock.length()){
@@ -62,7 +62,7 @@ bool ISTable::parseStream(std::istream& s){
         }
 
         this->_lookuptable[newIs.uniformString] = newIs;
-        LOGD("Added lookup: " + newIs.toString());
+        LOGF("Added lookup: " + newIs.toString());
     }
 
     return true;

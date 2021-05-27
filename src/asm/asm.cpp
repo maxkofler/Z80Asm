@@ -8,6 +8,8 @@ Asm::Asm(){
     this->_lookuptable = new ISTable();
 
     this->_prog = new uint8_t [UINT16_MAX];
+    for (size_t i = 0; i < UINT16_MAX; i++)
+        this->_prog[i] = 0;
 }
 
 Asm::~Asm(){

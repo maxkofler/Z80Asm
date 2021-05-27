@@ -1,0 +1,16 @@
+1;00;nop
+1;01;ld,bc,**
+1;02;ld,(bc),a
+1;03;inc,bc
+1;04;inc,b
+1;05;dec,b
+1;06;ld,b,*
+1;07;rlca
+1;08;ex,af,af'
+1;09;add,hl,bc
+1;0A;ld,a,(bc)
+1;0B;dec,bc
+1;0C;inc,c
+1;0D;dec,c;
+1;0E;ld,c,*
+1;0F;rrca

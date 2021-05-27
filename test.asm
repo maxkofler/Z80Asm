@@ -1,11 +1,12 @@
 NOP
 LOOP:
     ld, b, 56H
-    ld, bc, FUN
+    ld, bc, GAMING
     NOP
     NOP
     add hl, bc
     ex af, af'
     rlca
-FUN:
+
+GAMING:
     NOP
