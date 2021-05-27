@@ -3,7 +3,8 @@
 bool Asm::assemble(uint16_t startAddr){
     FUN();
 
-    uint16_t curAddr = startAddr;
+    this->_startAddr = startAddr;
+    this->_curAddr = startAddr;
 
     std::string curBlock;
 
@@ -14,10 +15,10 @@ bool Asm::assemble(uint16_t startAddr){
             curBlock = line.at(blockPos);
         
             //First of all check for a label and if so, give it the required address
-            if (this->p_checkLabelDefinition(curBlock, curAddr))
+            if (this->p_checkLabelDefinition(curBlock, this->_curAddr))
                 continue;
 
-            int resCheckInstruction = this->p_checkInstruction(line, blockPos, curAddr);
+            int resCheckInstruction = this->p_checkInstruction(line, blockPos, this->_curAddr);
 
             if (resCheckInstruction == 0){
                 //No instruction found

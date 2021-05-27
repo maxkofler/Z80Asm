@@ -1,6 +1,11 @@
+NOP
 LOOP:
     ld, b, 56H
-    rj, FUN
-    rj, loop
+    ld, bc, FUN
+    NOP
+    NOP
+    add hl, bc
+    ex af, af'
+    rlca
 FUN:
     NOP

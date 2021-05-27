@@ -14,7 +14,13 @@ int main(int argc, char** argv){
     if (!asmx.loadLookup("../lookup.txt"))
         return -1;
 
-    asmx.assemble(0x1000);
+    if (!asmx.assemble(0x1000))
+        return -1;
+
+    if (!asmx.link())
+        return -1;
+
+    asmx.logProg();
 
     return 0;
 }

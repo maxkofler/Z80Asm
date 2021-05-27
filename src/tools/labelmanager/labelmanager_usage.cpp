@@ -12,4 +12,6 @@ bool LabelManager::labelUsage(std::string name, uint16_t addr){
         LOGD("Buffering usage of label \"" + name + "\" at " + Log::toHexString(addr));
         this->_undefinedUsages.push_back(std::make_pair(name, addr));
     }
+
+    return true;
 }

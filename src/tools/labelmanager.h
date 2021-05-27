@@ -32,6 +32,18 @@ public:
      **/
     bool                                labelUsage(std::string name, uint16_t addr);
 
+    /**
+     *  Links the usages in the buffer to the defined labels
+     *  @return                         false when there is an undefined reference
+     **/
+    bool                                link();
+
+    /**
+     *  Replaces all label usages with the label addresses
+     *  @arg    prog                    The program array to write to
+     **/
+    bool                                insertAddrs(uint8_t* &prog);
+
 private:
     std::map<std::string, Label>                    _labels;
 

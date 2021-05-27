@@ -37,6 +37,13 @@ public:
     size_t                      getOpCount(){return this->_operands.size();}
     std::string                 getUniformString(){return this->_uniformString;}
 
+    /**
+     *  Assembles the operands, increments curAddr to next instruction
+     *  @arg    prog            A pointer to the program array
+     *  @arg    curAddr         A reference to the current address variable
+     **/
+    bool                        assembleOperands(uint8_t* &prog, uint16_t& curAddr);
+
 private:
     std::string                 _uniformString;
     uint8_t                     _opcode;

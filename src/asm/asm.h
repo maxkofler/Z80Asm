@@ -39,11 +39,21 @@ public:
      **/
     bool                            assemble(uint16_t startAddr);
 
+    /**
+     *  Links all remaining labels and inserts the addresses to the usages
+     **/
+    bool                            link();
+
+    void                            logProg();
+
 private:
     FileParser*                     _sourceFile;
     LabelManager*                   _labels;
     ISTable*                        _lookuptable;
 
+    uint8_t*                        _prog;
+    uint16_t                        _startAddr = 0;
+    uint16_t                        _curAddr = 0;
 
     /**
      *  assemble()  Check if the current block is a label definition and insert the current address

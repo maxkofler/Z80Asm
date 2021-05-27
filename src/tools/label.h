@@ -35,6 +35,8 @@ public:
      **/
     void                        addUsage(uint16_t addr);
 
+    bool                        applyUsages(uint8_t* &prog);
+
     std::string                 getName(){return this->_name;}
     uint16_t                    getAddress(){return this->_address;}
 

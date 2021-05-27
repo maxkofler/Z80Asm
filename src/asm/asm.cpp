@@ -6,6 +6,8 @@ Asm::Asm(){
     this->_sourceFile = new FileParser();
     this->_labels = new LabelManager();
     this->_lookuptable = new ISTable();
+
+    this->_prog = new uint8_t [UINT16_MAX];
 }
 
 Asm::~Asm(){
