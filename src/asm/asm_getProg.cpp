@@ -9,8 +9,5 @@ std::vector<uint8_t> Asm::getProg(){
         prog.push_back(this->_prog[i]);
     }
 
-    //Push a HALT for security reasons
-    prog.push_back(0x76);
-
     return prog;
 }

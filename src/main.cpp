@@ -1,5 +1,5 @@
-#include "log/log.h"
-#include "asm/asm.h"
+#include <log.h>
+#include <asm.h>
 
 #include <argparser.h>
 
@@ -15,7 +15,7 @@ int main(int argc, char** argv){
         hlog = new Log(Log::I, false);
 
     Asm asmx;
-    uint16_t startAddr = 0x1000;
+    uint16_t startAddr = 0x0000;
 
     //The path to the source file
     std::string srcFilePath;

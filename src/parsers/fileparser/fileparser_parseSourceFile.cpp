@@ -1,4 +1,4 @@
-#include "../fileparser.h"
+#include "parsers/fileparser.h"
 
 size_t FileParser::parseSourceFile(std::string path){
     FUN();

@@ -1,4 +1,4 @@
-#include "../label.h"
+#include "tools/label.h"
 
 bool Label::applyUsages(uint8_t* &prog){
     FUN();

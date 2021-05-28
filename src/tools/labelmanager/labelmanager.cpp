@@ -1,4 +1,4 @@
-#include "../labelmanager.h"
+#include "tools/labelmanager.h"
 
 LabelManager::LabelManager(){
     FUN();

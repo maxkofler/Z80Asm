@@ -1,4 +1,4 @@
-#include "../instruction.h"
+#include "tools/instruction.h"
 
 void Instruction::push16bHexString(std::string str){
     FUN();

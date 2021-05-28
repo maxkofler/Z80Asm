@@ -1,6 +1,6 @@
 #include "asm.h"
 
-#include "../tools/instruction.h"
+#include "tools/instruction.h"
 
 int Asm::p_checkInstruction(Block& curLine, size_t curPos, uint16_t& curAddr){
     FUN();

@@ -1,4 +1,4 @@
-#include "../labelmanager.h"
+#include "tools/labelmanager.h"
 
 bool LabelManager::insertAddrs(uint8_t* &prog){
     FUN();

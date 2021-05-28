@@ -6,11 +6,11 @@ class FileParser;
 #include <fstream>
 #include <string>
 
-#include "../log/log.h"
+#include <log.h>
 
-#include "../asm/asm.h"
-#include "./block.h"
-#include "./parsertools.h"
+#include <asm.h>
+#include <parsers/block.h>
+#include <parsers/parsertools.h>
 
 class FileParser{
 public:

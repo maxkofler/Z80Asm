@@ -1,6 +1,4 @@
-#include "logfunction.h"
-
-#include <iostream>
+#include "log/logfunction.h"
 
 LogFunction::LogFunction(const char* name, Log* parent){
     this->_name = name;

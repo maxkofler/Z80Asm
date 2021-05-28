@@ -1,12 +1,7 @@
-NOP
-LOOP:
-    ld, b, 56H
-    ld, bc, GAMING
-    NOP
-    NOP
-    add hl, bc
-    ex af, af'
-    rlca
-
-GAMING:
-    NOP
+MAIN:
+    ld a 5fh
+    inc a
+    ld c 01h
+    dec c
+    ld (FF69h) a
+    ld sp 69F2h

@@ -1,4 +1,4 @@
-#include "../instruction.h"
+#include "tools/instruction.h"
 
 bool Instruction::parse(Block& block, size_t pos, uint16_t& curAddr, LabelManager* labels){
     FUN();

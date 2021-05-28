@@ -1,4 +1,4 @@
-#include "../label.h"
+#include "tools/label.h"
 
 void Label::setAddress(uint16_t addr){
     FUN();

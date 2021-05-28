@@ -1,4 +1,4 @@
-#include "../instruction.h"
+#include "tools/instruction.h"
 
 #include <ctype.h>
 
@@ -78,7 +78,7 @@ bool Instruction::p_parseOP(std::string curBlock, uint16_t& curAddr, LabelManage
                     //  8-bit direct address
                     //  [(*)]   [(F6h)]
                     operand = "(*)";
-                    this->push8bHexString(curBlock);
+                    this->push8bHexString(curBlock.substr(1, 2));
                 }else{
                     LOGE("Could not identify operator type of \"" + curBlock + "\"");
                     return false;
@@ -111,7 +111,7 @@ bool Instruction::p_parseOP(std::string curBlock, uint16_t& curAddr, LabelManage
                     //  16-bit direct address
                     //  [(**)]  [(F6A1h)]
                     operand = "(**)";
-                    this->push16bHexString(curBlock);
+                    this->push16bHexString(curBlock.substr(1, 4));
                 }else{
                     LOGE("Could not identify operator type of \"" + curBlock + "\"");
                     return false;

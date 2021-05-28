@@ -1,4 +1,4 @@
-#include "../labelmanager.h"
+#include "tools/labelmanager.h"
 
 bool LabelManager::defineLabel(std::string name, uint16_t addr){
     FUN();

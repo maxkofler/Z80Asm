@@ -1,4 +1,4 @@
-#include "../instruction.h"
+#include "tools/instruction.h"
 
 Instruction::Instruction(){
     FUN();

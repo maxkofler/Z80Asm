@@ -1,4 +1,4 @@
-#include "../label.h"
+#include "tools/label.h"
 
 Label::Label(){
     FUN();

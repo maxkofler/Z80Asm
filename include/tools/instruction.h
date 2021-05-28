@@ -6,10 +6,10 @@ class Instruction;
 #include <string>
 #include <vector>
 
-#include "../log/log.h"
+#include <log.h>
 
-#include "../parsers/block.h"
-#include "labelmanager.h"
+#include "parsers/block.h"
+#include "tools/labelmanager.h"
 
 class Instruction{
 

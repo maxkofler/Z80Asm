@@ -1,4 +1,4 @@
-#include "../istable.h"
+#include "tools/istable.h"
 
 lookupIS ISTable::lookup(std::string uniformString){
     FUN();

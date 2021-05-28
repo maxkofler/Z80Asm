@@ -7,12 +7,12 @@ class Asm;
 #include <vector>
 #include <utility>
 
-#include "../log/log.h"
-#include "../parsers/fileparser.h"
-#include "../tools/labelmanager.h"
-#include "../tools/istable.h"
-#include "../tools/label.h"
-#include "../parsers/block.h"
+#include <log.h>
+#include <parsers/fileparser.h>
+#include <tools/labelmanager.h>
+#include <tools/istable.h>
+#include <tools/label.h>
+#include <parsers/block.h>
 
 class Asm{
 

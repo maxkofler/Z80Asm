@@ -1,4 +1,4 @@
-#include "../instruction.h"
+#include "tools/instruction.h"
 
 bool Instruction::assembleOperands(uint8_t* &prog, uint16_t &curAddr){
     FUN();

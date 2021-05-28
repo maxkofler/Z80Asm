@@ -2,7 +2,7 @@
 #define LOG_H
 
 class Log;
-#include "logfunction.h"
+#include <log/logfunction.h>
 
 extern Log* hlog;
 

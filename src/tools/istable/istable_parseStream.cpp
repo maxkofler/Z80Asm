@@ -1,6 +1,6 @@
-#include "../istable.h"
+#include "tools/istable.h"
 
-#include "../../parsers/parsertools.h"
+#include "parsers/parsertools.h"
 
 bool ISTable::parseStream(std::istream& s){
     FUN();
