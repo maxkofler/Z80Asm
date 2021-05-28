@@ -46,6 +46,11 @@ public:
 
     void                            logProg();
 
+    /**
+     *  Returns the assembled hex data
+     **/
+    std::vector<uint8_t>            getProg();
+
 private:
     FileParser*                     _sourceFile;
     LabelManager*                   _labels;
