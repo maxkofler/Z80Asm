@@ -1,17 +1,25 @@
 #include "log/log.h"
 #include "asm/asm.h"
 
+#include <argparser.h>
+
 Log* hlog;
 
 int main(int argc, char** argv){
-    hlog = new Log(Log::I, false);
+    Argparser parser(Log::I);
+    parser.parse(argc, argv);
+    
+    if (parser.checkFlag("-v"))
+        hlog = new Log(Log::D, false);
+    else
+        hlog = new Log(Log::I, false);
 
     Asm asmx;
 
     std::string srcFilePath;
 
-    if (argc == 2){
-        srcFilePath = argv[1];
+    if (parser.getArgumentsCount() == 2){   //Just the input file provided
+        srcFilePath = parser.getArgumentAt(1);
     }else{
         LOGE("Please provide a source file");
         return -1;
