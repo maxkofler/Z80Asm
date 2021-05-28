@@ -1,0 +1,3 @@
+[submodule "Argparser"]
+	path = Argparser
+	url = https://github.com/maxkofler/Argparser
