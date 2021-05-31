@@ -26,6 +26,14 @@ public:
      **/
     static Block                blockFromCodeLine(std::string line);
 
+    /**
+     *  Removes all appearances of the specified character in the string
+     *  @arg    in              The string to process
+     *  @arg    strip           The character to strip out
+     *  @return                 The modified string
+     **/
+    static std::string          stripChar(std::string in, char strip);
+
 };
 
 #endif

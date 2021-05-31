@@ -10,6 +10,8 @@ Block ParserTools::blockFromLine(std::string line, char delimiter){
 
     while ((pos = line.find(delimiter)) != std::string::npos){
         block = line.substr(0, pos);
+        //Strip all tabs, are not needed
+        block = ParserTools::stripChar(block, '\t');
         if (!block.empty())
             newBlock.append(block);
         line.erase(0, pos + 1);

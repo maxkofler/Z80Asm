@@ -19,7 +19,6 @@ bool ISTable::parseStream(std::istream& s){
 
         //Check for right length (>=3)
         if (curBlock.length() < 3){
-            LOGW("Invalid block size for parsing for lookup: " + curBlock.toString());
             continue;
         }
 
