@@ -13,6 +13,12 @@ bool Asm::assemble(uint16_t startAddr){
 
             //Get the current block
             curBlock = line.at(blockPos);
+
+            //Check if the block is empty, continue if so
+            if(curBlock.empty()){
+                LOGD("Not processing empty block");
+                continue;
+            }
         
             //First of all check for a label and if so, give it the required address
             if (this->p_checkLabelDefinition(curBlock, this->_curAddr))
