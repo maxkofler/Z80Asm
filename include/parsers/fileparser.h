@@ -8,7 +8,7 @@ class FileParser;
 
 #include <log.h>
 
-#include <asm.h>
+#include "z80asm.h"
 #include <parsers/block.h>
 #include <parsers/parsertools.h>
 

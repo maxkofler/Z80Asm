@@ -1,4 +1,4 @@
-#include "asm.h"
+#include "z80asm.h"
 
 #include "tools/instruction.h"
 

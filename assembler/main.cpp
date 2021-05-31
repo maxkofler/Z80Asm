@@ -1,5 +1,5 @@
 #include <log.h>
-#include <asm.h>
+#include "z80asm.h"
 
 #include <argparser.h>
 
