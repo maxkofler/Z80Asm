@@ -1,6 +1,6 @@
-#include "tools/instruction.h"
+#include "tools/z80asminstruction.h"
 
-bool Instruction::parse(Block& block, size_t pos, uint16_t& curAddr, LabelManager* labels){
+bool Z80AsmInstruction::parse(Block& block, size_t pos, uint16_t& curAddr, LabelManager* labels){
     FUN();
 
     //Clear the internal string

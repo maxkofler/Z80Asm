@@ -14,7 +14,7 @@ int main(int argc, char** argv){
     else
         hlog = new Log(Log::I, false);
 
-    Asm asmx;
+    Z80Asm asmx;
     uint16_t startAddr = 0x0000;
 
     //The path to the source file

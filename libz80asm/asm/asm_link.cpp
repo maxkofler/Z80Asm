@@ -1,6 +1,6 @@
 #include "z80asm.h"
 
-bool Asm::link(){
+bool Z80Asm::link(){
     FUN();
 
     if (!this->_labels->link())

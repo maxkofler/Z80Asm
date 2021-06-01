@@ -1,7 +1,7 @@
 #include "z80asm.h"
 
 
-bool Asm::p_checkLabelDefinition(std::string curBlock, uint16_t curAddr){
+bool Z80Asm::p_checkLabelDefinition(std::string curBlock, uint16_t curAddr){
     FUN();
 
     //Check if a label was detected

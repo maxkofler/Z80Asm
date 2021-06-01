@@ -1,6 +1,6 @@
-#include "tools/instruction.h"
+#include "tools/z80asminstruction.h"
 
-void Instruction::push16bHexString(std::string str){
+void Z80AsmInstruction::push16bHexString(std::string str){
     FUN();
 
     //Parse the number
@@ -13,7 +13,7 @@ void Instruction::push16bHexString(std::string str){
     LOGD("Pushed " + Log::toHexString(this->_operands.back()) + " to operands stack");
 }
 
-void Instruction::push8bHexString(std::string str){
+void Z80AsmInstruction::push8bHexString(std::string str){
     FUN();
 
     //Parse the number

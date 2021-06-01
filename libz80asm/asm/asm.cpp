@@ -1,6 +1,6 @@
 #include "z80asm.h"
 
-Asm::Asm(){
+Z80Asm::Z80Asm(){
     FUN();
 
     this->_sourceFile = new FileParser();
@@ -12,7 +12,7 @@ Asm::Asm(){
         this->_prog[i] = 0;
 }
 
-Asm::~Asm(){
+Z80Asm::~Z80Asm(){
     FUN();
 
     delete this->_sourceFile;

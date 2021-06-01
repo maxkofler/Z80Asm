@@ -1,6 +1,6 @@
 #include "z80asm.h"
 
-std::vector<uint8_t> Asm::getProg(){
+std::vector<uint8_t> Z80Asm::getProg(){
     FUN();
 
     std::vector<uint8_t> prog;

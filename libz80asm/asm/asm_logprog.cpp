@@ -1,6 +1,6 @@
 #include "z80asm.h"
 
-void Asm::logProg(){
+void Z80Asm::logProg(){
     FUN();
 
     for(int i = this->_startAddr; i < this->_curAddr; i++){

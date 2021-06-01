@@ -1,8 +1,8 @@
-#include "tools/instruction.h"
+#include "tools/z80asminstruction.h"
 
 #include <ctype.h>
 
-bool Instruction::p_parseOP(std::string curBlock, uint16_t& curAddr, LabelManager* labels){
+bool Z80AsmInstruction::p_parseOP(std::string curBlock, uint16_t& curAddr, LabelManager* labels){
     FUN();
 
     std::string operand = "";

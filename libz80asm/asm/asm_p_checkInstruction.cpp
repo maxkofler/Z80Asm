@@ -1,11 +1,11 @@
 #include "z80asm.h"
 
-#include "tools/instruction.h"
+#include "tools/z80asminstruction.h"
 
-int Asm::p_checkInstruction(Block& curLine, size_t curPos, uint16_t& curAddr){
+int Z80Asm::p_checkInstruction(Block& curLine, size_t curPos, uint16_t& curAddr){
     FUN();
 
-    Instruction is;
+    Z80AsmInstruction is;
 
     if (is.parse(curLine, curPos, curAddr, this->_labels)){
         lookupIS curIs = this->_lookuptable->lookup(is.getUniformString());

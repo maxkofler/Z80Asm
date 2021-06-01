@@ -1,7 +1,7 @@
 #ifndef __INSTRUCTION_H__
 #define __INSTRUCTION_H__
 
-class Instruction;
+class Z80AsmInstruction;
 
 #include <string>
 #include <vector>
@@ -11,11 +11,11 @@ class Instruction;
 #include "parsers/block.h"
 #include "tools/labelmanager.h"
 
-class Instruction{
+class Z80AsmInstruction{
 
 public:
-    Instruction();
-    ~Instruction();
+    Z80AsmInstruction();
+    ~Z80AsmInstruction();
 
     /**
      *  Parses all the information needed to look up this instruction

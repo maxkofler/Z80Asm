@@ -1,6 +1,6 @@
 #include "z80asm.h"
 
-bool Asm::loadLookup(std::string fPath){
+bool Z80Asm::loadLookup(std::string fPath){
     FUN();
 
     LOGD("Loading lookup table from " + fPath);

@@ -1,6 +1,6 @@
-#include "tools/instruction.h"
+#include "tools/z80asminstruction.h"
 
-bool Instruction::assembleOperands(uint8_t* &prog, uint16_t &curAddr){
+bool Z80AsmInstruction::assembleOperands(uint8_t* &prog, uint16_t &curAddr){
     FUN();
 
     for (auto i : this->_operands){

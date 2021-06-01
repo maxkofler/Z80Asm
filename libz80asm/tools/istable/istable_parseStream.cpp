@@ -56,7 +56,7 @@ bool ISTable::parseStream(std::istream& s){
 
         //Check if the instruction is not already present
         if (this->_lookuptable.count(newIs.uniformString) > 0){
-            LOGE("Instruction already in lookup table!");
+            LOGE("Z80AsmInstruction already in lookup table!");
             continue;
         }
 

@@ -24,7 +24,7 @@ public:
     size_t                      parseSourceFile(std::string path);
 
 
-    friend class                Asm;
+    friend class                Z80Asm;
 private:
     std::string                 _pathCurFile;   
     std::ifstream               _curFile;

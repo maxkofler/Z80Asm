@@ -1,7 +1,7 @@
 #ifndef __ASM_H__
 #define __ASM_H__
 
-class Asm;
+class Z80Asm;
 
 #include <string>
 #include <vector>
@@ -14,11 +14,11 @@ class Asm;
 #include <tools/label.h>
 #include <parsers/block.h>
 
-class Asm{
+class Z80Asm{
 
 public:
-    Asm();
-    ~Asm();
+    Z80Asm();
+    ~Z80Asm();
 
     /**
      *  Parses the lookup table from the provided file

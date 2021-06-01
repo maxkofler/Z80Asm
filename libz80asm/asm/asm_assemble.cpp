@@ -1,6 +1,6 @@
 #include "z80asm.h"
 
-bool Asm::assemble(uint16_t startAddr){
+bool Z80Asm::assemble(uint16_t startAddr){
     FUN();
 
     this->_startAddr = startAddr;
