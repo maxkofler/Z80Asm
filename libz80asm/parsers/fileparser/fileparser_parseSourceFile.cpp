@@ -3,12 +3,15 @@
 size_t FileParser::parseSourceFile(std::string path){
     FUN();
     
-    this->_pathCurFile = path;
+    this->_lines.clear();
 
+    this->_pathCurFile = path;
+    
     this->_curFile.open(this->_pathCurFile);
 
     if (!this->_curFile.is_open()){
         LOGE("Could not open file " + this->_pathCurFile);
+        this->_curFile.close();
         return -1;
     }
 
@@ -20,6 +23,8 @@ size_t FileParser::parseSourceFile(std::string path){
         this->_lines.push_back(curBlock);
         LOGD("Fetched block: " + this->_lines.back().toString());
     }
+
+    this->_curFile.close();
 
     return this->_lines.size();
 }
