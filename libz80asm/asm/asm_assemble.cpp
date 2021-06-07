@@ -3,6 +3,8 @@
 bool Z80Asm::assemble(uint16_t startAddr){
     FUN();
 
+    this->clear();
+
     this->_startAddr = startAddr;
     this->_curAddr = startAddr;
 

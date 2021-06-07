@@ -51,6 +51,11 @@ public:
      **/
     std::vector<uint8_t>            getProg();
 
+    /**
+     *  Clears everything to assemble a new file
+     **/
+    void                            clear();
+
 private:
     FileParser*                     _sourceFile;
     LabelManager*                   _labels;
