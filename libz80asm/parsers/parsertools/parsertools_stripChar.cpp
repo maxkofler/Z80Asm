@@ -6,6 +6,7 @@ std::string ParserTools::stripChar(std::string in, char strip){
     for (size_t i = 0; i < in.length(); i++){
         if (in.at(i) == strip){
             in.erase(in.begin() + i);
+            i--;
         }
     }
 
