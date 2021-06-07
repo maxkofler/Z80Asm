@@ -21,6 +21,7 @@ Block ParserTools::blockFromCodeLine(std::string line){
     std::string curString;
     for (size_t i = 0; i < curBlock.length(); i++){
         curString = curBlock.at(i);
+        curString = stripChar(curString, '\t');
         buf = ParserTools::blockFromLine(curString, ',');
         if (!buf.empty()){
             retBlock.append(buf);
