@@ -9,7 +9,13 @@ int main(int argc, char** argv){
     Argparser parser(Log::I);
     parser.parse(argc, argv);
     
-    if (parser.checkFlag("-v"))
+    if (parser.checkFlag("-vvvv"))
+        hlog = new Log(Log::FUNCALLS, true); 
+    else if (parser.checkFlag("-vvv"))
+        hlog = new Log(Log::MEM, true);   
+    else if (parser.checkFlag("-vv"))
+        hlog = new Log(Log::MEM, false);
+    else if (parser.checkFlag("-v"))
         hlog = new Log(Log::D, false);
     else
         hlog = new Log(Log::I, false);
@@ -52,14 +58,20 @@ int main(int argc, char** argv){
     }
 
 
-    if (!asmx.loadSource(srcFilePath))
+    if (!asmx.loadSource(srcFilePath)){
+        LOGE("Aborting");
         return -1;
+    }
 
-    if (!asmx.assemble(startAddr))
+    if (!asmx.assemble(startAddr)){
+        LOGE("Aborting");
         return -1;
+    }
 
-    if (!asmx.link())
+    if (!asmx.link()){
+        LOGE("Aborting");
         return -1;
+    }
 
     asmx.logProg();
 

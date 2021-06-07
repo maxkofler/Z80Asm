@@ -16,12 +16,15 @@ int Z80Asm::p_checkInstruction(Block& curLine, size_t curPos, uint16_t& curAddr)
                 this->_prog[curAddr] = i;
                 curAddr++;
             }
-            is.assembleOperands(this->_prog, curAddr);
+            if(!is.assembleOperands(this->_prog, curAddr)){
+                return -1;
+            }
         }else{
             return -1;
         }
     }else{
         //ERROR
+        LOGE("Could not parse Instruction");
         return -1;
     }
 
