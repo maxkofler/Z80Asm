@@ -1,3 +1,6 @@
 [submodule "Argparser"]
 	path = Argparser
 	url = https://github.com/maxkofler/Argparser
+[submodule "Log"]
+	path = Log
+	url = https://github.com/maxkofler/Log

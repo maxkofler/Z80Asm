@@ -8,7 +8,7 @@ class ISTable;
 #include <istream>
 #include <inttypes.h>
 
-#include <log.h>
+#include "log.h"
 
 typedef struct s_lookupIS{
 

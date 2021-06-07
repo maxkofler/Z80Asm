@@ -6,7 +6,7 @@ class FileParser;
 #include <fstream>
 #include <string>
 
-#include <log.h>
+#include "log.h"
 
 #include "z80asm.h"
 #include <parsers/block.h>

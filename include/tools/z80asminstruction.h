@@ -6,7 +6,7 @@ class Z80AsmInstruction;
 #include <string>
 #include <vector>
 
-#include <log.h>
+#include "log.h"
 
 #include "parsers/block.h"
 #include "tools/labelmanager.h"

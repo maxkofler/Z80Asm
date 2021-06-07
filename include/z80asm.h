@@ -7,7 +7,7 @@ class Z80Asm;
 #include <vector>
 #include <utility>
 
-#include <log.h>
+#include "log.h"
 #include <parsers/fileparser.h>
 #include <tools/labelmanager.h>
 #include <tools/istable.h>

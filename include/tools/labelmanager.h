@@ -7,7 +7,7 @@ class LabelManager;
 #include <string>
 #include <map>
 
-#include <log.h>
+#include "log.h"
 
 #include <tools/label.h>
 
