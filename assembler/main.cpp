@@ -21,7 +21,7 @@ int main(int argc, char** argv){
         hlog = new Log(Log::I, false);
 
     Z80Asm asmx;
-    uint16_t startAddr = 0x0000;
+    uint16_t startAddr = 0x1000;
 
     //The path to the source file
     std::string srcFilePath;
